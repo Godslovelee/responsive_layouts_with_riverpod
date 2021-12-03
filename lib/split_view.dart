@@ -19,7 +19,7 @@ class SplitView extends StatelessWidget {
 
 
     if (screenWidth >= breakpoint) {
-      // widescreen: menu on the left, content on the right
+      // wide screen: menu on the left, content on the right
       return Row(
         children: [
           // use SizedBox to constrain the AppMenu to a fixed width
