@@ -25,7 +25,9 @@ class AppMenu extends ConsumerWidget {
           // iterate through the keys to get the page names
           for (var pageName in _availablePages.keys)
             PageListTile(
+              selectedPageName: selectedPageName,
               pageName: pageName,
+
             ),
         ],
       ),
