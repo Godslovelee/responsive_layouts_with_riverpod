@@ -4,7 +4,7 @@ import 'package:responsive_layouts_w_riverpod/second_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // a map of ("page name", WidgetBuilder) pairs
 
-final selectedPageProver = StateProvider<String>((ref){
+final selectedPageProvider = StateProvider<String>((ref){
   return _availablePages.keys.first;
 });
 
@@ -13,9 +13,10 @@ final _availablePages = <String, WidgetBuilder>{
   'Second Page': (_) => SecondPage(),
 };
 
-class AppMenu extends StatelessWidget {
+class AppMenu extends ConsumerWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedPageName = ref.watch(selectedPageProvider.state).state;
     return Scaffold(
       appBar: AppBar(title: Text('Menu')),
       body: ListView(
