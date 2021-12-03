@@ -24,16 +24,17 @@ class SplitView extends StatelessWidget {
         children: [
           // use SizedBox to constrain the AppMenu to a fixed width
           SizedBox(
-            width: 240,
-            // TODO: make this configurable
+
+            width: menuWidth,
+
             child: AppMenu(),
           ),
           // vertical black line as separator
           Container(width: 0.5, color: Colors.black),
           // use Expanded to take up the remaining horizontal space
           Expanded(
-            // TODO: make this configurable
-            child: FirstPage(),
+            //
+            child: content,
           ),
         ],
       );
