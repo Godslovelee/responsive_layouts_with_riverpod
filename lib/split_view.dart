@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_menu.dart';
-import 'first_page.dart';
-import 'second_page.dart';
+
 
 class SplitView extends StatelessWidget {
   const SplitView({Key key,
@@ -41,7 +40,7 @@ class SplitView extends StatelessWidget {
     } else {
       // narrow screen: show content, menu inside drawer
       return Scaffold(
-        body: FirstPage(),
+        body: content,
         // use SizedBox to contrain the AppMenu to a fixed width
         drawer: SizedBox(
           width: 240,
