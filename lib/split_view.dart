@@ -41,7 +41,7 @@ class SplitView extends StatelessWidget {
       // narrow screen: show content, menu inside drawer
       return Scaffold(
         body: content,
-        // use SizedBox to contrain the AppMenu to a fixed width
+        // use SizedBox to constrain the AppMenu to a fixed width
         drawer: SizedBox(
           width: 240,
           child: Drawer(
