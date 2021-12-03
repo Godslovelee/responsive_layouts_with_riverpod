@@ -4,10 +4,20 @@ import 'first_page.dart';
 import 'second_page.dart';
 
 class SplitView extends StatelessWidget {
+  const SplitView({Key key,
+   this.menu , this.content, this.menuWidth = 240, this.breakpoint = 600,
+  }) : super(key: key);
+  final Widget menu;
+  final Widget content;
+  final double breakpoint;
+  final double menuWidth;
+
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    const breakpoint = 600.0;
+
+
     if (screenWidth >= breakpoint) {
       // widescreen: menu on the left, content on the right
       return Row(
@@ -15,14 +25,14 @@ class SplitView extends StatelessWidget {
           // use SizedBox to constrain the AppMenu to a fixed width
           SizedBox(
             width: 240,
-
+            // TODO: make this configurable
             child: AppMenu(),
           ),
           // vertical black line as separator
           Container(width: 0.5, color: Colors.black),
           // use Expanded to take up the remaining horizontal space
           Expanded(
-
+            // TODO: make this configurable
             child: FirstPage(),
           ),
         ],
