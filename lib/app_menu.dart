@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_layouts_w_riverpod/first_page.dart';
 import 'package:responsive_layouts_w_riverpod/second_page.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 // a map of ("page name", WidgetBuilder) pairs
+
+final selectedPageProver = StateProvider<String>((ref){
+  return _availablePages.keys.first;
+});
+
 final _availablePages = <String, WidgetBuilder>{
   'First Page': (_) => FirstPage(),
   'Second Page': (_) => SecondPage(),
