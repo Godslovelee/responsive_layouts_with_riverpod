@@ -15,8 +15,8 @@ final _availablePages = <String, WidgetBuilder>{
 
 class AppMenu extends ConsumerWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final selectedPageName = ref.watch(selectedPageProvider.state).state;
+  Widget build(BuildContext context, ScopedReader watch) {
+    final selectedPageName = watch(selectedPageProvider).state;
     return Scaffold(
       appBar: AppBar(title: Text('Menu')),
       body: ListView(
@@ -26,7 +26,7 @@ class AppMenu extends ConsumerWidget {
           for (var pageName in _availablePages.keys)
             PageListTile(
               selectedPageName: selectedPageName,
-              pageName: pageName,
+              pageName: pageName, onPressed: () {  },
 
             ),
         ],
@@ -37,10 +37,10 @@ class AppMenu extends ConsumerWidget {
 
 class PageListTile extends StatelessWidget {
   const PageListTile({
-    Key key,
-    this.selectedPageName,
-    this.pageName,
-    this.onPressed,
+     Key? key,
+    required this.selectedPageName,
+    required this.pageName,
+    required this.onPressed,
   }) : super(key: key);
   final String selectedPageName;
   final String pageName;
