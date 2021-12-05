@@ -26,7 +26,7 @@ class AppMenu extends ConsumerWidget {
           for (var pageName in _availablePages.keys)
             PageListTile(
               selectedPageName: selectedPageName,
-              pageName: pageName, onPressed: () {  },
+              pageName: pageName, onPressed: () => {  },
 
             ),
         ],
