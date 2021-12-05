@@ -33,6 +33,10 @@ class AppMenu extends ConsumerWidget {
       ),
     );
   }
+
+  void _selectPage(BuildContext context, ScopedReader watch, String pageName){
+
+  }
 }
 
 class PageListTile extends StatelessWidget {
