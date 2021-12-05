@@ -46,11 +46,11 @@ class AppMenu extends ConsumerWidget {
 
 class PageListTile extends StatelessWidget {
   const PageListTile({
-     Key? key,
+
     required this.selectedPageName,
     required this.pageName,
     required this.onPressed,
-  }) : super(key: key);
+  });
   final String selectedPageName;
   final String pageName;
   final VoidCallback onPressed;
