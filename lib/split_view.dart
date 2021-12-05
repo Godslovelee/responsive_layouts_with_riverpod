@@ -3,8 +3,8 @@ import 'app_menu.dart';
 
 
 class SplitView extends StatelessWidget {
-  const SplitView({Key key,
-   this.menu , this.content, this.menuWidth = 240, this.breakpoint = 600,
+  const SplitView({required Key key,
+   required this.menu , required this.content, this.menuWidth = 240, this.breakpoint = 600,
   }) : super(key: key);
   final Widget menu;
   final Widget content;
