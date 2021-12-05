@@ -36,7 +36,7 @@ class AppMenu extends ConsumerWidget {
 
   void _selectPage(BuildContext context, ScopedReader watch, String pageName){
     if(watch(selectedPageProvider).state != pageName){
-      watch(selectedPageProvider).state = pageName;
+     watch(selectedPageProvider).state = pageName;
 
 
     }
