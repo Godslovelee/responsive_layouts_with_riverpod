@@ -26,7 +26,7 @@ class AppMenu extends ConsumerWidget {
           for (var pageName in _availablePages.keys)
             PageListTile(
               selectedPageName: selectedPageName,
-              pageName: pageName, onPressed: () => {  },
+              pageName: pageName, onPressed: () => _selectPage(context, watch, pageName),
 
             ),
         ],
@@ -35,6 +35,11 @@ class AppMenu extends ConsumerWidget {
   }
 
   void _selectPage(BuildContext context, ScopedReader watch, String pageName){
+    if(watch(selectedPageProvider).state != pageName){
+      watch(selectedPageProvider).state = pageName;
+
+
+    }
 
   }
 }
