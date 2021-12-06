@@ -36,9 +36,9 @@ class AppMenu extends ConsumerWidget {
     );
   }
 
-  void _selectPage(BuildContext context, Widget ref, String pageName){
-    if(ref.read(selectedPageProvider).state != pageName){
-     ref.read(selectedPageProvider).state = pageName;
+  void _selectPage(BuildContext context, WidgetRef ref, String pageName){
+    if(ref.read(selectedPageProvider.state).state != pageName){
+     ref.read(selectedPageProvider.state).state = pageName;
 
 
     }
