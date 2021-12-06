@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_layouts_w_riverpod/first_page.dart';
 import 'package:responsive_layouts_w_riverpod/second_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 // a map of ("page name", WidgetBuilder) pairs
 
 final selectedPageProvider = StateProvider<String>((ref){
@@ -15,8 +16,8 @@ final _availablePages = <String, WidgetBuilder>{
 
 class AppMenu extends ConsumerWidget {
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final selectedPageName = watch(selectedPageProvider).state;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedPageName = ref.watch(selectedPageProvider.state).state;
     return Scaffold(
       appBar: AppBar(title: Text('Menu')),
       body: ListView(
@@ -26,7 +27,8 @@ class AppMenu extends ConsumerWidget {
           for (var pageName in _availablePages.keys)
             PageListTile(
               selectedPageName: selectedPageName,
-              pageName: pageName, onPressed: () => _selectPage(context, watch, pageName),
+              pageName: pageName,
+              onPressed: () => _selectPage(context, ref, pageName),
 
             ),
         ],
@@ -34,9 +36,9 @@ class AppMenu extends ConsumerWidget {
     );
   }
 
-  void _selectPage(BuildContext context, ScopedReader watch, String pageName){
-    if(watch(selectedPageProvider).state != pageName){
-     watch(selectedPageProvider).state = pageName;
+  void _selectPage(BuildContext context, Widget ref, String pageName){
+    if(ref.read(selectedPageProvider).state != pageName){
+     ref.read(selectedPageProvider).state = pageName;
 
 
     }
