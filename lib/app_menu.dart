@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_layouts_w_riverpod/first_page.dart';
-import 'package:responsive_layouts_w_riverpod/second_page.dart';
+import 'first_page.dart';
+import 'second_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // a map of ("page name", WidgetBuilder) pairs
